@@ -1,0 +1,39 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    padding: 100px 500px;
+    background-color: #001632 !important;
+}
+
+h1{
+    color: #636E77 !important;
+    font-size: 100%;
+}
+
+ul{
+    list-style-type: none;
+    margin-left: -35px;
+    padding-top: 10px;
+}
+
+li{
+    border-bottom: 1px solid lightgray;
+    padding: 10px 20px;
+    cursor: pointer;
+}
+
+li:last-child{
+    border-bottom: none;
+}
+
+.done{
+    text-decoration: line-through;
+}
+
+.inputrow .col-12{
+    padding: 0 !important;
+}
