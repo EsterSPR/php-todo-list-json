@@ -10,14 +10,26 @@ createApp({
         }
     },
     methods: {
+        // toDoItemAdd(){
+        //     let addItem = {
+        //         toDoBar: this.toDoBar,
+        //         done: false,
+        //     }
+
+        //     const data = {
+        //         toDoAdd: this.toDoBar,
+        //     }
+
+        //     axios.post(this.server, addItem, {headers: {'Content-Type': 'multipart/form-data '}})
+        // }
         toDoItemAdd(){
             const data = {
-                toDoBarContent: this.toDoBar,
+                toDoBar: this.toDoBar,
                 done: false,
             }
-
+        
             axios.post(this.server, data, {
-                headers: {'Content-Type': 'multipart/form-data '}
+                headers: {'Content-Type': 'multipart/form-data'}
             }).then((response) => {
                 this.toDoBar = '';
                 this.toDoItems = response.data;

@@ -1,24 +1,35 @@
 <?php
+
+    include __DIR__ .'/functions.php';
+
     $string = file_get_contents('todoitems.json');
 
     $toDoList = json_decode($string, true);
 
-    if(isset($_POST['addItem'])){
-        $addedItem = $_POST['addItem'];
 
-        $toDoArray = [
-            "todo" => $addedItem,
-            "done" => false,
-        ];
 
-        $toDoArray = $_POST;
+    // if(isset($_POST['toDoAdd'])){
+    //     $addedItem = $_POST['toDoAdd'];
 
-        $toDoItems[] = $toDoBar;
+    //     $toDoArray = [
+    //         "todo" => $addedItem,
+    //         "done" => false,
+    //     ];
 
-        file_put_contents('todoitems.json', json_encode($toDoItems));
+    //     $toDoList[] = $toDoArray;
+
+    //     file_put_contents('todoitems.json', json_encode($toDoList));
+    // }
+
+
+
+    if(isset($_POST['toDoBar'])){
+        $toDoList = toDoItemAdd($toDoList, $_POST);
     }
+
+
 
     header('Content-Type: application/json');
     
-    echo json_encode($string);
+    echo json_encode($toDoList);
 ?>
